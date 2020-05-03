@@ -1,0 +1,45 @@
+<!--
+
+
+
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Ejemplo de JavaScript</title>
+<meta charset="UTF-8">
+</head>
+
+<body>
+
+<form method="post" action="procesar.php" id="formulario1">
+Ingrese su nombre de usuario:
+<input type="text" id="nombre de usuario" name="nombre de usuario" size="20">
+<br>
+Ingrese su clave:
+<input type="password" id="password" name="password" size="20">
+<br>
+<input type="submit" id="confirmar" name="confirmar" value="Confirmar">
+</form>
+
+<script>
+window.addEventListener('DOMContentLoaded', inicio, false);
+
+function inicio() {
+document.getElementById("formulario1").addEventListener('submit', validar, false);
+}
+
+function validar(evt) {
+var usu = document.getElementById("nombre de usuario").value;
+var cla = document.getElementById("password").value;
+if (usu.length == 0 || cla.length == 0) {
+alert('El nombre de usuario o clave está vacio');
+evt.preventDefault();
+}
+}
+</script>
+
+</body>
+
+</html>
